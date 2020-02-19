@@ -1,1 +1,5 @@
-i.fab.fa-facebook-square
+i.fab.fa-facebook-square.fa-2x
+
+= form_with scope: :search, method: :get, url: :users, local: true do |form|
+  = form.text_field :q
+  = form.submit "検索"

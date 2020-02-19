@@ -1,0 +1,10 @@
+
+- if @users.present?
+  table.list
+    thead
+      tr
+        th 名前
+    tbody
+      - @users.each do |user|
+        tr
+          td = user.name
