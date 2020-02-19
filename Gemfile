@@ -21,6 +21,7 @@ gem 'kaminari'
 gem 'slim-rails'
 gem 'html2slim'
 gem 'font-awesome-sass'
+gem 'jquery-rails'
 
 # Backend
 gem 'jbuilder', '~> 2.5'
