@@ -20,7 +20,7 @@ gem 'bootstrap'
 gem 'kaminari'
 gem 'slim-rails'
 gem 'html2slim'
-gem 'font-awesome-sass', '~> 5.4.1'
+gem 'font-awesome-sass'
 
 # Backend
 gem 'jbuilder', '~> 2.5'

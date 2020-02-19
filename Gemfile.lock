@@ -270,7 +270,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
-  font-awesome-sass (~> 5.4.1)
+  font-awesome-sass
   html2slim
   jbuilder (~> 2.5)
   kaminari
