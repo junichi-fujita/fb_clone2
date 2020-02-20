@@ -1,0 +1,6 @@
+h1 facebook
+
+= form_with scope: :session, url: :session, id: "login_form", local: true do |form|
+  = form.text_field :email
+  = form.password_field :password
+  = form.submit "ログイン"
