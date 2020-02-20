@@ -6,5 +6,5 @@ i.fab.fa-facebook-square.fa-2x
 
 - if current_user
   ul.account-meue
-    = current_user.name
+    = link_to current_user.name, :account
     = link_to "ログアウト", :session, method: :delete, data: { confirm: "ログアウトしますか？"}
