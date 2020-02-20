@@ -1,0 +1,6 @@
+h1 新規アカウントを作成
+p 簡単に登録できます。
+= form_with scope: :session, url: :session, id: "login_form", local: true do |form|
+  = form.text_field :name
+  = form.password_field :password
+  = form.submit "アカウント登録"

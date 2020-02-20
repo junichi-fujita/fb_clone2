@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_secure_password
+
   class << self
     def search(query)
       rel = order("id")
