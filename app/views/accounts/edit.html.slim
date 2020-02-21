@@ -1,2 +1,4 @@
-h1 Accounts#edit
-p Find me in app/views/accounts/edit.html.slim
+= form_with model: @user, scope: :account, url: :account, local: true do |form|
+  = render "shared/user_form", form: form
+  div = form.submit
+= link_to "マイアカウントに戻る", :account
