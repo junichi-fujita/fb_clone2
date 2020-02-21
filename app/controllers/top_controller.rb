@@ -3,7 +3,7 @@ class TopController < ApplicationController
     if current_user
       render "users/index"
     else
-      render :login, layout: "login"
+      redirect_to :new_user
     end
   end
 end
