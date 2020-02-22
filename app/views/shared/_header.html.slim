@@ -8,3 +8,4 @@ i.fab.fa-facebook-square.fa-2x
   ul.account-meue
     = link_to current_user.name, :account
     = link_to "ログアウト", :session, method: :delete, data: { confirm: "ログアウトしますか？"}
+    = link_to "ホーム", :root

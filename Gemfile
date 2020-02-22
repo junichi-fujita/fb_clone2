@@ -29,6 +29,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rails-i18n'
 gem 'valid_email2'
 gem 'bcrypt'
+gem 'carrierwave'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

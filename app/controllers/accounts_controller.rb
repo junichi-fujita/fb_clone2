@@ -20,7 +20,7 @@ class AccountsController < ApplicationController
   end
 
   private def account_params
-    params[:account].permit(
+    params.require(:account).permit(
       :name,
       :email,
     )
