@@ -1,14 +1,18 @@
-table
-  thead
-    tr
-      th 投稿内容
-      th 画像
-  tbody
-    - @pictures.each do |picture|
-      tr
-        td = picture.description
-        td = image_tag picture.image.url
-        td = picture.user.name
-        td = link_to "編集", [:edit, picture]
-        td = link_to "削除", picture, method: :delete, data: { confirm: "本当に削除しますか？"}
-= link_to "画像投稿", :new_picture
+.container
+  h1 
+    = current_user.name
+    | さんの投稿
+  br
+
+  table.table
+    tbody
+      - @pictures.each do |picture|
+        tr
+          th 投稿内容
+          td = truncate picture.description, length: 15
+             = link_to "もっと読む", picture 
+          th 画像
+          td = image_tag picture.image.url
+          td = link_to "詳細", picture
+          td = link_to "編集", [:edit, picture]
+          td = link_to "削除", picture, method: :delete, data: { confirm: "本当に削除しますか？"}

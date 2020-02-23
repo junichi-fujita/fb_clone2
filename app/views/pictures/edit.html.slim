@@ -1,3 +1,9 @@
-= form_with model: @picture, local: true do |form|
-  = render "shared/form_picture", form: form
-  div = form.submit
+.container
+  = form_with model: @picture, local: true do |form|
+    .form-group.
+      = form.text_field :description,
+          class: "form-control"
+    .form-group
+      = form.label "画像"
+      = form.file_field :image
+    div = form.submit class: "btn btn-primary"

@@ -1,18 +1,18 @@
-.container
+.home
+  .container
+    = form_with model: @picture, local: true do |form|
+      .form-group.
+        = form.text_field :description,
+            placeholder: "#{current_user.name}さんー今何してる？",
+            class: "form-control"
+      .form-group
+        = form.label "画像"
+        = form.file_field :image
+      div = form.submit "投稿する", class: "btn btn-primary"
+    br
+    .border.border_bottom
 
-  = form_with model: @picture, local: true do |form|
-    .form-group.
-      = form.text_field :description,
-          placeholder: "#{current_user.name}さんー今何してる？",
-          class: "form-control"
-    .form-group
-      = form.label "画像"
-      = form.file_field :image
-    div = form.submit "投稿する", class: "btn btn-primary"
-  br
-  .border.border_bottom
-
-  - @pictures.each do |picture|
-    p = picture.description
-    = image_tag picture.image.url
-    = render "top/footer", picture: picture
+    - @pictures.each do |picture|
+      p = picture.description
+      = image_tag picture.image.url
+      = render "top/footer", picture: picture
