@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to :root, notice: "登録しました。"
+      redirect_to :root, notice: "アカウントを登録しました。"
     else
       render "new"
     end
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to :root, notice: "登録を削除しました。"
+    redirect_to :root, notice: "アカウント登録を削除しました。"
   end
 
   private def user_params

@@ -10,5 +10,7 @@ html
   body
     header
       = render "shared/login_header"
-    mail
+    main
+      - if flash.notice.present?
+        .alert.alert-success = flash.notice
       = yield
