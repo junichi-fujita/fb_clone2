@@ -1,7 +1,7 @@
 class TopController < ApplicationController
   def home
     if current_user
-      render "users/index"
+      redirect_to :all_picture_pictures
     else
       redirect_to :new_user
     end

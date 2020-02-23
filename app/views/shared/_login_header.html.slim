@@ -1,6 +1,12 @@
-h1 facebook
-
-= form_with scope: :session, url: :session, id: "login_form", local: true do |form|
-  = form.text_field :email
-  = form.password_field :password
-  = form.submit "ログイン"
+header
+  .container
+    .d-inline-flex
+      h1.display-5 fb_clone
+    .d-inline-flex
+      = form_with scope: :session, url: :session, id: "login_form", local: true do |form|
+        .form-group
+          = form.text_field :email, placeholder: "email"
+          |     
+          = form.password_field :password, placehodler: "password"
+          |     
+          = form.submit "ログイン"

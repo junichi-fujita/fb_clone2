@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get 'accounts/show'
-  get 'accounts/edit'
   root "top#home"
   resources :users
-  resources :pictures
+  resources :pictures do
+    get "all_picture", on: :collection
+  end
   resource :session, only: [:create, :destroy]
   resource :account, only: [:show, :edit, :update]
 end
