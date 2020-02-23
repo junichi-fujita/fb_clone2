@@ -1,13 +1,15 @@
-
-
-= render "shared/home"
-
-- if @users.present?
-  table.list
-    thead
-      tr
-        th 名前
-    tbody
-      - @users.each do |user|
+.container
+  - if @users.present?
+    table.table.table-hover
+      thead
         tr
-          td = user.name
+          th ユーザー名
+          th 投稿内容
+          th 投稿画像
+      tbody
+        - @users.each do |user|
+          - user.pictures.each do |picture|
+            tr
+              td = user.name
+              td = picture.description
+              td = image_tag picture.image.url
