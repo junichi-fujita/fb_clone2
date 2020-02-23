@@ -1,11 +1,14 @@
-i.fab.fa-facebook-square.fa-2x
-
-= form_with scope: :search, method: :get, url: :users, local: true do |form|
-  = form.text_field :q
-  = form.submit "検索"
-
-- if current_user
-  ul.account-meue
-    = link_to current_user.name, :account
-    = link_to "ログアウト", :session, method: :delete, data: { confirm: "ログアウトしますか？"}
-    = link_to "ホーム", :root
+header
+  .container.d-inline-flex
+    h2.d-inline fb-clone
+  
+    .d-inline
+      = form_with scope: :search, method: :get, url: :users, local: true do |form|
+        = form.text_field :q
+        = form.submit "検索"
+    .d-inline
+      - if current_user
+        ul.account-meue
+          = link_to current_user.name, :account
+          = link_to "ログアウト", :session, method: :delete, data: { confirm: "ログアウトしますか？"} 
+          = link_to "ホーム", :root
