@@ -5,8 +5,8 @@ header
     .d-inline-flex
       = form_with scope: :session, url: :session, id: "login_form", local: true do |form|
         .form-group
-          = form.text_field :email, placeholder: "email"
+          = form.text_field :email, placeholder: "メールアドレス"
           |     
-          = form.password_field :password, placehodler: "password"
+          = form.password_field :password, placehodler: "パスワード"
           |     
           = form.submit "ログイン"
