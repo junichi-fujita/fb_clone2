@@ -1,11 +1,9 @@
-table.attr
-  tr
-    th 画像
-    td = 
-  tr
-    th 名前
-    td = @user.name
-  tr
-    th メールアドレス
-    td = @user.email
-= link_to "アカウントの編集", :edit_account
+.container
+  table.table.table-hover
+    tr
+      th 名前
+      td = @user.name
+    tr
+      th メールアドレス
+      td = @user.email
+  = link_to "アカウントの編集", :edit_account, class: "btn btn-primary"
