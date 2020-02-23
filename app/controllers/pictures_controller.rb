@@ -17,6 +17,7 @@ class PicturesController < ApplicationController
 
   def new
     @picture = current_user.pictures.build
+    render "top/home"
   end
 
   def edit
