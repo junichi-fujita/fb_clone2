@@ -4,7 +4,7 @@
     | さんの投稿確認
   br
 
-  = form_with model: @picture, url: :pictures, local: true do |form|
+  = form_with model: @picture, url: choose_new_or_edit, method: :post, local: true do |form|
     = form.hidden_field :description
     = form.hidden_field :image_cache
     table.table
