@@ -12,7 +12,7 @@ class PicturesController < ApplicationController
   end
   
   def show
-    redirect_to "edit"
+    
   end
 
   def new

@@ -1,0 +1,14 @@
+.container
+  h1 
+    = current_user.name
+    | さんの投稿詳細
+  br
+  table.table
+    tbody
+      tr
+        th 投稿内容
+        td = @picture.description
+      tr
+        th 投稿画像
+        td = image_tag @picture.image.url
+  = link_to "投稿一覧に戻る", :pictures, class: "btn btn-primary"
