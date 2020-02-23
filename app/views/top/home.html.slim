@@ -1,4 +1,6 @@
-p こんにちは
+.container
 
-- @pictures.each do |picture|
-  = image_tag picture.image.url
+  - @pictures.each do |picture|
+    p = picture.description
+    = image_tag picture.image.url
+    = render "top/footer", picture: picture

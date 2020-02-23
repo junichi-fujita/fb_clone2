@@ -43,7 +43,7 @@ class PicturesController < ApplicationController
 
   def destroy
     @picture.destroy
-    redirect_to :pictures, notice: "画像を削除しました。"
+    redirect_to :all_picture_pictures, notice: "画像を削除しました。"
   end
 
   private def picture_params
