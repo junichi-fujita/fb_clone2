@@ -1,5 +1,12 @@
 .container
   = form_with model: @user, scope: :account, url: :account, local: true do |form|
-    = render "shared/user_form", form: form
-    div = form.submit
-  = link_to "マイアカウントに戻る", :account
+    .form-group
+      = form.label "ユーザー名:"
+      = form.text_field :name, class: "form-control"
+      br
+      = form.label "メールアドレス:"
+      = form.text_field :email, class: "form-control"
+      br
+      div = form.submit class: "btn btn-primary"
+  br
+  = link_to "マイアカウントに戻る", :account, class: "btn btn-primary"

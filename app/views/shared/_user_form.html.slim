@@ -1,5 +1,6 @@
-table.attr
-  tr
-    td = form.text_field :name
-  tr
-    td = form.text_field :email
+.form-group
+  = form.label "ユーザー名:"
+  = form.text_field :name, class: "form-control"
+  br
+  = form.label "メールアドレス:"
+  = form.text_field :email, class: "form-control"
