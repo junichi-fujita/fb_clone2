@@ -5,6 +5,9 @@ ul.picture-footer
       = link_to "削除", picture, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "ml-2"
   li.ml-2
     | by 
-    = link_to picture.user.name, :pictures
+    - if current_user == picture.user
+      = link_to picture.user.name, :pictures
+    - else
+      = picture.user.name
   li
     = picture.updated_at.strftime("%Y/%m/%d %H:%M")

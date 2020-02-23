@@ -27,7 +27,7 @@ class PicturesController < ApplicationController
   def create
     @picture = current_user.pictures.build(picture_params)
     if @picture.save
-      redirect_to :pictures, notice: "画僧を投稿しました。"
+      redirect_to :all_picture_pictures, notice: "画僧を投稿しました。"
     else
       render "new"
     end
@@ -45,6 +45,10 @@ class PicturesController < ApplicationController
   def destroy
     @picture.destroy
     redirect_to :all_picture_pictures, notice: "画像を削除しました。"
+  end
+
+  def confirm
+    @picture = current_user.pictures.build(picture_params)
   end
 
   private def picture_params
