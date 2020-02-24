@@ -11,6 +11,4 @@ html
     header
       = render "shared/login_header"
     main
-      - if flash.notice.present?
-        .alert.alert-success = flash.notice
       = yield

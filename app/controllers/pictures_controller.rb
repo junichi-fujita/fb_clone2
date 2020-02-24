@@ -34,6 +34,7 @@ class PicturesController < ApplicationController
     @picture = current_user.pictures.build(picture_params)
     if params[:back]
       render "top/home"
+    else
       if @picture.save
         redirect_to :all_picture_pictures, notice: "画僧を投稿しました。"
       else
@@ -57,7 +58,9 @@ class PicturesController < ApplicationController
   end
 
   def confirm
+    @pictures = Picture.order(updated_at: :desc)
     @picture = current_user.pictures.build(picture_params)
+    render "top/home" if @picture.invalid?
   end
 
   private def picture_params

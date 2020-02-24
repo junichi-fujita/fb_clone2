@@ -1,18 +1,19 @@
-.top
-  .container
-    h1 新規アカウントを作成
-    br
-    p 簡単に登録できます。
-    br
-    .form
-      = form_with model: @user,url: :users, local: true do |form|
-        .form-group.w-75
-          = form.text_field :name, placeholder: "名前", class: "form-control"
-        .form-group.w-75
-          = form.text_field :email, placeholder: "メールアドレス", class: "form-control"
-        .form-group.w-75
-          = form.password_field :password, placeholder: "パスワード", class: "form-control"
-        .form-group.w-75
-          = form.password_field :password_confirmation, placeholder: "パスワード（確認用）", class: "form-control"
-        .form-group
-          = form.submit "アカウント登録", class: "btn btn-primary"
+= render "shared/error", obj: @user
+
+.container
+  h1 新規アカウントを作成
+  br
+  p 簡単に登録できます。
+  br
+  .form
+    = form_with model: @user,url: :users, local: true do |form|
+      .form-group.w-75
+        = form.text_field :name, placeholder: "名前", class: "form-control"
+      .form-group.w-75
+        = form.text_field :email, placeholder: "メールアドレス", class: "form-control"
+      .form-group.w-75
+        = form.password_field :password, placeholder: "パスワード", class: "form-control"
+      .form-group.w-75
+        = form.password_field :password_confirmation, placeholder: "パスワード（確認用）", class: "form-control"
+      .form-group
+        = form.submit "アカウント登録", class: "btn btn-primary"

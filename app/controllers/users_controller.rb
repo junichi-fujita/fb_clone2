@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to :root, notice: "アカウントを登録しました。"
     else
-      render "new"
+      render "top/login", layout: "login"
     end
   end
 
