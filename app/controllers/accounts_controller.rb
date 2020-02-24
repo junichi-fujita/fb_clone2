@@ -19,7 +19,9 @@ class AccountsController < ApplicationController
     end
   end
 
-  private def account_params
+  private 
+  
+  def account_params
     params.require(:account).permit(
       :name,
       :email,

@@ -25,7 +25,9 @@ class UsersController < ApplicationController
     redirect_to :root, notice: "アカウント登録を削除しました。"
   end
 
-  private def user_params
+  private 
+  
+  def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end

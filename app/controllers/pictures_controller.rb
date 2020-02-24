@@ -63,7 +63,9 @@ class PicturesController < ApplicationController
     render "top/home" if @picture.invalid?
   end
 
-  private def picture_params
+  private 
+  
+  def picture_params
     params.require(:picture).permit(
       :image,
       :image_cache,
@@ -72,7 +74,7 @@ class PicturesController < ApplicationController
     )
   end
 
-  private def set_current_user_pictures
+  def set_current_user_pictures
     @picture = current_user.pictures.find(params[:id])
   end
 end
