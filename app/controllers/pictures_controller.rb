@@ -72,7 +72,7 @@ class PicturesController < ApplicationController
     )
   end
 
-  def set_current_user_pictures
+  private def set_current_user_pictures
     @picture = current_user.pictures.find(params[:id])
   end
 end
