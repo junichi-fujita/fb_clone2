@@ -1,11 +1,4 @@
 ja:
-  activerecord:
-    models:
-      picture:
-    attributes:
-      picture:
-        description: 投稿文
-        image: 投稿画像
   activeredord:
     models:
       user:
@@ -14,3 +7,12 @@ ja:
         name: ユーザー名
         email: メールアドレス
         password: パスワード
+        password_confirmation: パスワード（確認用）
+  activerecord:
+    models:
+      picture:
+    attributes:
+      picture:
+        description: 投稿文
+        image: 投稿画像
+  
