@@ -3,8 +3,7 @@ class PicturesController < ApplicationController
   before_action :set_current_user_pictures, only: [:show, :edit, :update, :destroy]
 
   def all_picture
-    @pictures = Picture.order(updated_at: :desc)
-    render "top/home"
+    redirect_to :new_picture
   end
 
   def index
@@ -16,8 +15,15 @@ class PicturesController < ApplicationController
   end
 
   def new
-    @picture = current_user.pictures.build
-    render "top/home"
+    if params[:back]
+      @pictures = Picture.order(updated_at: :desc)
+      @picture = current_user.pictures.build(picture_params)
+      render "top/home"
+    else
+      @pictures = Picture.order(updated_at: :desc)
+      @picture = current_user.pictures.build
+      render "top/home"
+    end
   end
 
   def edit
@@ -26,10 +32,13 @@ class PicturesController < ApplicationController
 
   def create
     @picture = current_user.pictures.build(picture_params)
-    if @picture.save
-      redirect_to :all_picture_pictures, notice: "画僧を投稿しました。"
-    else
-      render "new"
+    if params[:back]
+      render "top/home"
+      if @picture.save
+        redirect_to :all_picture_pictures, notice: "画僧を投稿しました。"
+      else
+        render "new"
+      end
     end
   end
 

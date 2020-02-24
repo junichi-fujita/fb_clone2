@@ -4,7 +4,7 @@
     | さんの投稿確認
   br
 
-  = form_with model: @picture, url: choose_new_or_edit, method: :post, local: true do |form|
+  = form_with model: @picture, local: true do |form|
     = form.hidden_field :description
     = form.hidden_field :image_cache
     table.table
@@ -15,4 +15,8 @@
         tr
           th 投稿画像
           td = image_tag @picture.image.url
-    = link_to "投稿する", :pictures, class: "btn btn-primary"
+    = form.submit "投稿する", class: "btn btn-primary mr-2"
+  br
+  = form_with model: @picture, url: :new_picture, local: true, method: "get" do |form|
+    = form.hidden_field :image_cache
+    = form.submit "戻る", name: "back", class: "btn btn-primary"

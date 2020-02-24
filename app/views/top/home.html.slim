@@ -1,19 +1,11 @@
-.home
-  .container
-    = form_with model: @picture, scope: :picture, url: :confirm_pictures, local: true do |form|
-      .form-group.
-        = form.text_field :description,
-            placeholder: "#{current_user.name}さんー今何してる？",
-            class: "form-control"
-      .form-group
-        = form.label "画像"
-        = form.file_field :image
-        = form.hidden_field :image_cache
-      div = form.submit "投稿する", class: "btn btn-primary"
-    br
-    .border.border_bottom
 
-    - @pictures.each do |picture|
-      p = picture.description
-      = image_tag picture.image.url
-      = render "top/footer", picture: picture
+.container
+  = render partial: "shared/form_picture", locals: { picture: @picture }
+  
+  br
+  .border.border_bottom
+
+  - @pictures.each do |picture|
+    p = picture.description
+    = image_tag picture.image.url
+    = render "top/footer", picture: picture
